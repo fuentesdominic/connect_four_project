@@ -12,9 +12,9 @@ windows.onload = function {
 
 function gamestart() {
     gameBoard[];
-    for(let rows = 0; rows < rows; rows++) {
+    for(let rows = 0; i < rows; i++) {
         let rows[];
-        for(let columns = 0; columns < columns; columns++) {
+        for(let columns = 0; i < columns; i++) {
             rows.push();
             let circles = document.createElement('div');
             circles.id = rows.toString() + '.' + columns.toString();
@@ -22,4 +22,9 @@ function gamestart() {
             circles.getElementsById('gameBoard').append(circles);
         }
     }
+}
+
+
+const winningNumbers = {
+
 }
