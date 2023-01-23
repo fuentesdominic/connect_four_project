@@ -26,4 +26,11 @@ button  {
     margin: 1px;
 }
 
+.playerRed {
+    background-color: red;
+}
+
+.playerYellow {
+    background-color: yellow;
+}
 
