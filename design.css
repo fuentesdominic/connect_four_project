@@ -1,0 +1,19 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+.gameboard {
+    border: 10px solid black;
+    display: wrap;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    height: 600px;
+    width: 700px;
+    background-color: blue;
+    border-radius: 5px;
+}
+
+button  {
+    margin: 0 auto;
+    
+}
