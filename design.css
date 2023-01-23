@@ -15,5 +15,15 @@ body {
 
 button  {
     margin: 0 auto;
-    
+
 }
+
+.circles {
+    background-color: white;
+    border-radius: 50px;
+    height: 75px;
+    width: 75px;
+    margin: 1px;
+}
+
+
