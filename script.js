@@ -9,6 +9,17 @@ const redMoves = []
 // push into array 
 // call check win function 
 
+const selectTile = (e) => {
+    if (e.target.classList.length === 1) {
+        if(currentPlayer === 'red') {
+        currentCircle.classList.add('playerRed')
+        currentPlayer = playerYellow
+    } else if (currentPlayer === 'yellow') {
+        currentCircle.classList.add('playerYellow')
+         currentPlayer = playerRed
+    } 
+}
+}
 // const selectTile = (e) => {
 // const turnNumber = parseInt(e.target.id)
 // const bottomTile = parseInt(e.target.id) + 7
@@ -33,6 +44,17 @@ const redMoves = []
 //         }
 //     }
 
+const selcetCircle = (e) => {
+const turnNumber = parseInt(e.target.id)
+const bottomTile = parseInt(e.target.id) + 7
+    if (e.target.id >= 35 || gameBoard[bottomTile].classList.length > 1) {
+        placeCircle(e)
+    }
+}
+
+// gameBoard.forEach(gameBoard => {
+//     gameBoard.addEventListener('click', selectCircle)
+// })
 
 function gamestart() {
     for(let i = 0; i < gameBoard.children.length; i++) {
