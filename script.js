@@ -7,14 +7,17 @@ const gameBoard = document.querySelector('.gameboard')
 
 function gamestart() {
     for(let i = 0; i < gameBoard.children.length; i++) {
-        gameBoard.children[i].addEventListener('click', () => {
-         if(currentPlayer === 'red') {
-              gameBoard.children[i].style.backgroundColor = 'red';
-                currentPlayer = playerYellow
-         } else if (currentPlayer === 'yellow') {
-            gameBoard.children[i].style.backgroundColor = 'yellow';
-                currentPlayer = playerRed
-       }
+        const currentCircle = gameBoard.children[i]
+        currentCircle.addEventListener('click', () => {
+         if(currentCircle.classList.length < 2) {
+                if(currentPlayer === 'red') {
+                 currentCircle.classList.add('playerRed')
+                 currentPlayer = playerYellow
+                } else if (currentPlayer === 'yellow') {
+                    currentCircle.classList.add('playerYellow')
+                    currentPlayer = playerRed
+                } 
+            } 
 
        })
     
