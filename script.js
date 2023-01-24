@@ -4,6 +4,16 @@ const playerYellow = 'yellow';
 let currentPlayer = playerRed;
 const gameBoard = document.querySelector('.gameboard')
 
+const selectTile = (e) => {
+    const turnNumber = parseInt(e.target.id)
+    const bottomTile = parseInt(e.target.id) + 7
+if (e.target.id >= 35) {
+   console.log(e.target.id)
+} else if (circlces[bottomTile].classList) {
+
+}
+}
+
 
 function gamestart() {
     for(let i = 0; i < gameBoard.children.length; i++) {
@@ -20,11 +30,16 @@ function gamestart() {
             } 
 
        })
-    
+   
     }
 
 }
+
 gamestart()
+
+// if id is less than 7 it is ok
+// else if position clicked id - 7 this is ok
+// 
 
 const winningNumbers = [
 // horizontal 
@@ -59,3 +74,6 @@ const winningNumbers = [
 
 // diagonal
 ]
+
+
+// loop through div, .removeAttribute -- for game restart 
