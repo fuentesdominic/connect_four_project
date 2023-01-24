@@ -3,16 +3,35 @@ const playerYellow = 'yellow';
 
 let currentPlayer = playerRed;
 const gameBoard = document.querySelector('.gameboard')
+const yellowMoves = []
+const redMoves = []
+// check player moves to possible winning conbinations
+// push into array 
+// call check win function 
 
-const selectTile = (e) => {
-    const turnNumber = parseInt(e.target.id)
-    const bottomTile = parseInt(e.target.id) + 7
-if (e.target.id >= 35) {
-   console.log(e.target.id)
-} else if (circlces[bottomTile].classList) {
-
-}
-}
+// const selectTile = (e) => {
+// const turnNumber = parseInt(e.target.id)
+// const bottomTile = parseInt(e.target.id) + 7
+// if (e.target.id >= 35) {
+//     if(currentPlayer === 'red') {
+//         currentCircle.classList.add('playerRed')
+//         currentPlayer = playerYellow
+//        } else if (currentPlayer === 'yellow') {
+//            currentCircle.classList.add('playerYellow')
+//            currentPlayer = playerRed
+//         } 
+// }
+// } else {
+//     if (circlces[bottomTile].classList.length > 1) {
+//         if(currentPlayer === 'red') {
+//             currentCircle.classList.add('playerRed')
+//             currentPlayer = playerYellow
+//            } else if (currentPlayer === 'yellow') {
+//                currentCircle.classList.add('playerYellow')
+//                currentPlayer = playerRed
+//            } 
+//         }
+//     }
 
 
 function gamestart() {
