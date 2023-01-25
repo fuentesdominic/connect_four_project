@@ -45,7 +45,7 @@ const selectTile = (e) => {
 //     }
 
 const selcetCircle = (e) => {
-const turnNumber = parseInt(e.target.id)
+const selectTile = parseInt(e.target.id)
 const bottomTile = parseInt(e.target.id) + 7
     if (e.target.id >= 35 || gameBoard[bottomTile].classList.length > 1) {
         placeCircle(e)
@@ -154,5 +154,30 @@ const winningNumbers = [
 [20,26,32,38],
 ]
 
-
+function checkBoard() {
+    for(let i = 0; i < winningNumbers.length; i++) {
+        const tileOne = tile[winningNumbers[i][0]]
+        const tileTwo = tile[winningNumbers[i][1]]
+        const tileThree = tile[winningNumbers[i][2]]
+        const tileFour = tile[winningNumbers[i][3]]
+    } if (
+        tileOne.classList.contains(playerRed) &&
+        tileTwo.classList.contains(playerRed) &&
+        tileThree.classList.contains(playerRed) &&
+        tileFour.classList.contains(playerRed)
+        )
+        {
+            result.innerText = 'Player Red Wins!'
+        }
+    if ( 
+        tileOne.classList.contains(playerYellow) &&
+        tileTwo.classList.contains(playerYellow) &&
+        tileThree.classList.contains(playerYellow) && 
+        tileFour.classList.contains(playerYellow) 
+        )
+        {
+            result.innerText = 'Player Yellow Wins!'
+        }
+}
+checkBoard()
 // loop through div, .removeAttribute -- for game restart 
