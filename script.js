@@ -2,6 +2,7 @@ const playerRed = 'red';
 const playerYellow = 'yellow';
 
 let currentPlayer = playerRed;
+let gameRunning = true;
 const gameBoard = document.querySelector('.gameboard')
 const yellowMoves = []
 const redMoves = []
@@ -80,15 +81,43 @@ const winningNumbers = [
     [20,26,32,38],
     ]
     
-    function checkBoard() {
-        for(let i = 0; i < winningNumbers.length; i++) {
-            const tileOne = gameBoard[winningNumbers[i][0]];
-            console.log(tileOne);
-            const tileTwo = gameBoard[winningNumbers[i][1]];
-            const tileThree = gameBoard[winningNumbers[i][2]];
-            const tileFour = gameBoard[winningNumbers[i][3]];
+    function checkBoard(player) {
+        // console.log(gameBoard.children[36 + 6])
+        for(let i = 0; i < 42; i++) {
+            if (gameBoard.children[i]?.classList.contains(player) &&
+            gameBoard.children[i + 1]?.classList.contains(player) &&
+            gameBoard.children[i + 2]?.classList.contains(player) &&
+            gameBoard.children[i + 3]?.classList.contains(player)){
+                console.log(player)
+                gameRunning = false          
+              } else if (gameBoard.children[i]?.classList.contains(player) &&
+              gameBoard.children[i + 7]?.classList.contains(player) &&
+              gameBoard.children[i + 14]?.classList.contains(player) &&
+              gameBoard.children[i + 21]?.classList.contains(player)){
+                console.log(player) 
+                gameRunning = false 
+              } else if (gameBoard.children[i]?.classList.contains(player) &&
+              gameBoard.children[i + 8]?.classList.contains(player) &&
+              gameBoard.children[i + 16]?.classList.contains(player) &&
+              gameBoard.children[i + 24]?.classList.contains(player)) {
+                console.log(player) 
+                gameRunning = false 
+              } else if (gameBoard.children[i]?.classList.contains(player) &&
+              gameBoard.children[i + 6]?.classList.contains(player) &&
+              gameBoard.children[i + 12]?.classList.contains(player) &&
+              gameBoard.children[i + 18]?.classList.contains(player)) {
+                console.log(player) 
+                gameRunning = false 
+              }
         }
     }
+
+    // function checkBoard() {
+    //     for(let i = 0; i < winningNumbers.length; i++) {
+    //         const tileOne = gameBoard[winningNumbers[i][0]];
+    //         const tileTwo = gameBoard[winningNumbers[i][1]];
+    //         const tileThree = gameBoard[winningNumbers[i][2]];
+    //         const tileFour = gameBoard[winningNumbers[i][3]];
     //     } if (
     //         tileOne.classList.contains(playerRed) &&
     //         tileTwo.classList.contains(playerRed) &&
@@ -137,13 +166,17 @@ function gamestart() {
     for(let i = 0; i < gameBoard.children.length; i++) {
         const currentCircle = gameBoard.children[i]
         currentCircle.addEventListener('click', () => {
-         if(currentCircle.classList.length < 2) {
-                if(currentPlayer === 'red') {
-                 currentCircle.classList.add('playerRed')
-                 currentPlayer = playerYellow
-                } else if (currentPlayer === 'yellow') {
-                    currentCircle.classList.add('playerYellow')
-                    currentPlayer = playerRed
+        if (gameRunning) {
+        if(currentCircle.classList.length < 2) {
+               if(currentPlayer === 'red') {
+                currentCircle.classList.add('playerRed')
+                checkBoard('playerRed')
+                currentPlayer = playerYellow
+               } else if (currentPlayer === 'yellow') {
+                   currentCircle.classList.add('playerYellow')
+                   checkBoard('playerYellow')
+                   currentPlayer = playerRed
+                }
                 } 
             } 
 
