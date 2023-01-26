@@ -40,26 +40,26 @@ const redMoves = []
         }
     }
    
-// Forces circles to fill up the bottom of the board(Work In Progress)
-// const selectTile = (e) => {
-//     if (e.target.classList.length === 1) {
-//         if(currentPlayer === 'playerRed') {
-//         e.target.classList.add('playerRed')
-//         currentPlayer = 'playerYellow'
-//     } else if (currentPlayer === 'playerYellow') {
-//         e.target.classList.add('playerYellow')
-//          currentPlayer = 'playerRed'
-//     } 
-//     }    
-// } 
+// Forces circles to fill up the bottom of the board
+const selectTile = (e) => {
+    if (e.target.classList.length === 1) {
+        if(currentPlayer === 'playerRed') {
+        e.target.classList.add('playerRed')
+        currentPlayer = 'playerYellow'
+    } else if (currentPlayer === 'playerYellow') {
+        e.target.classList.add('playerYellow')
+         currentPlayer = 'playerRed'
+    } 
+    }    
+} 
 
-// const selcetCircle = (e) => {
-// const selectTile = parseInt(e.target.id)
-// const bottomTile = parseInt(e.target.id) + 7
-//     if (selectTile >= 35 || gameBoard[bottomTile].classList.length > 1) {
-//         placeCircle(e)
-//     }
-// }
+const selcetCircle = (e) => {
+const selectTile = parseInt(e.target.id)
+const bottomTile = parseInt(e.target.id) + 7
+    if (selectTile >= 35 || gameBoard[bottomTile].classList.length > 1) {
+        placeCircle(e)
+    }
+}
 
 // Function for Game Logic
 function gamestart() {
