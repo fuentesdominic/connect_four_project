@@ -1,12 +1,11 @@
 h1 {
-    font-family: sans-serif;
+    font-family: 'Gill Sans';
     font-size: 300%;
 }
 
 #winner {
     font-family: sans-serif;
     font-size: 150%;
-
 }
 
 #turn {
@@ -45,7 +44,7 @@ body {
 
 p {
     color: white;
-    font-size: 25px;
+    font-size: 125%;
 }
 
 #replayButton {
