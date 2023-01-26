@@ -40,13 +40,13 @@ const redMoves = []
         }
     }
    
-// Forces circles to fill up the bottom of the board
+// Forces circles to fill up at the bottom of the board
 const selectTile = (e) => {
     if (e.target.classList.length === 1) {
-        if(currentPlayer === 'playerRed') {
+        if(currentPlayer === 'red') {
         e.target.classList.add('playerRed')
         currentPlayer = 'playerYellow'
-    } else if (currentPlayer === 'playerYellow') {
+    } else if (currentPlayer === 'yellow') {
         e.target.classList.add('playerYellow')
          currentPlayer = 'playerRed'
     } 
