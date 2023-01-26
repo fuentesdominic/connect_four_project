@@ -16,34 +16,31 @@ const redMoves = []
             gameBoard.children[i + 1]?.classList.contains(player) &&
             gameBoard.children[i + 2]?.classList.contains(player) &&
             gameBoard.children[i + 3]?.classList.contains(player)){
-                winner.innerHTML = `${player} Wins!`
-                gameRunning = false  
+                gameRunning = false
+                return player  
               } else if (gameBoard.children[i]?.classList.contains(player) &&
               gameBoard.children[i + 7]?.classList.contains(player) &&
               gameBoard.children[i + 14]?.classList.contains(player) &&
-              gameBoard.children[i + 21]?.classList.contains(player)){
-                console.log(player) 
-                winner.innerHTML = `${player} Wins!`
+              gameBoard.children[i + 21]?.classList.contains(player)){ 
                 gameRunning = false 
+                return player
               } else if (gameBoard.children[i]?.classList.contains(player) &&
               gameBoard.children[i + 8]?.classList.contains(player) &&
               gameBoard.children[i + 16]?.classList.contains(player) &&
-              gameBoard.children[i + 24]?.classList.contains(player)) {
-                console.log(player) 
-                winner.innerHTML = `${player} Wins!`
+              gameBoard.children[i + 24]?.classList.contains(player)) { 
                 gameRunning = false 
+                return player
               } else if (gameBoard.children[i]?.classList.contains(player) &&
               gameBoard.children[i + 6]?.classList.contains(player) &&
               gameBoard.children[i + 12]?.classList.contains(player) &&
               gameBoard.children[i + 18]?.classList.contains(player)) {
-                console.log(player) 
-                winner.innerHTML = `${player} Wins!`
-                gameRunning = false 
+                gameRunning = false
+                return player 
               }
         }
     }
    
-// Forces circles to be placed at the bottom of the board
+// Forces circles to fill up the bottom of the board
 const selectTile = (e) => {
     if (e.target.classList.length === 1) {
         if(currentPlayer === 'red') {
@@ -56,19 +53,12 @@ const selectTile = (e) => {
 }
 }
 
-
 const selcetCircle = (e) => {
 const selectTile = parseInt(e.target.id)
 const bottomTile = parseInt(e.target.id) + 7
     if (e.target.id >= 35 || gameBoard[bottomTile].classList.length > 1) {
         placeCircle(e)
     }
-}
-
-// Game Reset Function 
-const replayButton = () => {
-    document.location.reload()
-    console.log(document.location.reload())
 }
 
 // Function for Game Logic
@@ -79,25 +69,40 @@ function gamestart() {
         if (gameRunning) {
         if(currentCircle.classList.length < 2) {
                if(currentPlayer === 'red') {
-                currentCircle.classList.add('playerRed')
-                checkBoard('playerRed') 
-                turn.innerHTML = 'Player Yellow Turn'  
-                currentPlayer = playerYellow
+                    currentCircle.classList.add('playerRed')
+                    if (!updateTitle(checkBoard('playerRed'))) { 
+                    turn.innerHTML = `Player Yellow's Turn`  
+                    currentPlayer = playerYellow
+                    }
                } else if (currentPlayer === 'yellow') {
                    currentCircle.classList.add('playerYellow')
-                   checkBoard('playerYellow')
-                   turn.innerHTML = 'Player Red Turn'
-                   currentPlayer = playerRed
+                   if (!updateTitle(checkBoard('playerYellow'))) {  
+                     turn.innerHTML = `Player Red's Turn`
+                     currentPlayer = playerRed
+                   }
                 }
                 } 
             } 
         })
     }
 }
+// Function that displays player turn and winner
+function updateTitle(player) {
+    if (player === 'playerRed') {
+      winner.innerHTML = `Player Red Wins!`
+      return true
+    } else if (player === 'playerYellow') {
+    winner.innerHTML = `Player Yellow Wins!`
+    return true
+}
+return false
+}
 gamestart()
 
-
-
+// Game Reset Function 
+const replayButton = () => {
+    document.location.reload()
+}
 
 // function 
 // const replayButton = gameBoard.children 

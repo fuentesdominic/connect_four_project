@@ -30,12 +30,22 @@ body {
     border-radius: 15px;
 }
 
-/* .firstpage {
-    border: solid black;
-} */
+.firstbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: auto;
+}
+
+.firstpage {
+    font-size: 20px;
+}
 
 p {
     color: white;
+    font-size: 25px;
 }
 
 #replayButton {
