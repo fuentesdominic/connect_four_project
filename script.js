@@ -143,10 +143,6 @@ const replayButton = () => {
     console.log(document.location.reload())
 }
 
-document.querySelector('#replayButton').addEventListener('click,', replayButton);
-
-
-
 // Function for Game Logic
 function gamestart() {
     for(let i = 0; i < gameBoard.children.length; i++) {

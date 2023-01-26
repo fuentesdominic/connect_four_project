@@ -13,9 +13,8 @@ body {
     border-radius: 5px;
 }
 
-button  {
-    margin: 0 auto;
-    
+#replayButton {
+    margin: 25px;
 }
 
 .circles {
