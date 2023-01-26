@@ -40,26 +40,26 @@ const redMoves = []
         }
     }
    
-// Forces circles to fill up the bottom of the board
-const selectTile = (e) => {
-    if (e.target.classList.length === 1) {
-        if(currentPlayer === 'red') {
-        currentCircle.classList.add('playerRed')
-        currentPlayer = playerYellow
-    } else if (currentPlayer === 'yellow') {
-        currentCircle.classList.add('playerYellow')
-         currentPlayer = playerRed
-    } 
-}
-}
+// Forces circles to fill up the bottom of the board(Work In Progress)
+// const selectTile = (e) => {
+//     if (e.target.classList.length === 1) {
+//         if(currentPlayer === 'playerRed') {
+//         e.target.classList.add('playerRed')
+//         currentPlayer = 'playerYellow'
+//     } else if (currentPlayer === 'playerYellow') {
+//         e.target.classList.add('playerYellow')
+//          currentPlayer = 'playerRed'
+//     } 
+//     }    
+// } 
 
-const selcetCircle = (e) => {
-const selectTile = parseInt(e.target.id)
-const bottomTile = parseInt(e.target.id) + 7
-    if (e.target.id >= 35 || gameBoard[bottomTile].classList.length > 1) {
-        placeCircle(e)
-    }
-}
+// const selcetCircle = (e) => {
+// const selectTile = parseInt(e.target.id)
+// const bottomTile = parseInt(e.target.id) + 7
+//     if (selectTile >= 35 || gameBoard[bottomTile].classList.length > 1) {
+//         placeCircle(e)
+//     }
+// }
 
 // Function for Game Logic
 function gamestart() {
@@ -86,6 +86,7 @@ function gamestart() {
         })
     }
 }
+
 // Function that displays player turn and winner
 function updateTitle(player) {
     if (player === 'playerRed') {
@@ -103,44 +104,3 @@ gamestart()
 const replayButton = () => {
     document.location.reload()
 }
-
-// function 
-// const replayButton = gameBoard.children 
-// replayButton.addEventListener('click', () => {
-//     for(let i = 0; i < gameBoard.children.length; i++) {
-//         if(checkBoard) {
-//             i=-1; continue;
-//         }
-//     }
-// })
-
-// if id is less than 7 it is ok
-// else if position clicked id - 7 this is ok
-// 
-
-
-// loop through div, .removeAttribute -- for game restart 
-
-// const selectTile = (e) => {
-// const turnNumber = parseInt(e.target.id)
-// const bottomTile = parseInt(e.target.id) + 7
-// if (e.target.id >= 35) {
-//     if(currentPlayer === 'red') {
-//         currentCircle.classList.add('playerRed')
-//         currentPlayer = playerYellow
-//        } else if (currentPlayer === 'yellow') {
-//            currentCircle.classList.add('playerYellow')
-//            currentPlayer = playerRed
-//         } 
-// }
-// } else {
-//     if (circlces[bottomTile].classList.length > 1) {
-//         if(currentPlayer === 'red') {
-//             currentCircle.classList.add('playerRed')
-//             currentPlayer = playerYellow
-//            } else if (currentPlayer === 'yellow') {
-//                currentCircle.classList.add('playerYellow')
-//                currentPlayer = playerRed
-//            } 
-//         }
-//     }
