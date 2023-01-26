@@ -1,13 +1,13 @@
+// Variables 
 const playerRed = 'red';
 const playerYellow = 'yellow';
 
 let currentPlayer = playerRed;
 let gameRunning = true;
 const gameBoard = document.querySelector('.gameboard')
+console.log('#replayButton')
 const yellowMoves = []
 const redMoves = []
-// check player moves to possible winning conbinations
-// push into array 
 
 // const winningNumbers = [
 //     // horizontal 
@@ -81,6 +81,7 @@ const redMoves = []
 //     [20,26,32,38],
 //     ]
     
+// Function checks who won, displays name of winner, and stops anymore circles from being placed once winner is displayed.
     function checkBoard(player) {
         for(let i = 0; i < 42; i++) {
             if (gameBoard.children[i]?.classList.contains(player) &&
@@ -114,7 +115,7 @@ const redMoves = []
         }
     }
    
-// 
+// Forces circles to be placed at the bottom of the board
 const selectTile = (e) => {
     if (e.target.classList.length === 1) {
         if(currentPlayer === 'red') {
@@ -135,6 +136,16 @@ const bottomTile = parseInt(e.target.id) + 7
         placeCircle(e)
     }
 }
+
+// Game Reset Function 
+const replayButton = () => {
+    document.location.reload()
+    console.log(document.location.reload())
+}
+
+document.querySelector('#replayButton').addEventListener('click,', replayButton);
+
+
 
 // Function for Game Logic
 function gamestart() {
