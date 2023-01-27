@@ -12,5 +12,6 @@
 
 ## Credits
 
+link to game: https://find-four-connect-4.surge.sh/
 Background Image: url(https://wallpapercave.com/wp/wp3109778.jpg)
 Websites that helped: https://dev.to/t/coding https://www.w3schools.com/ https://stackoverflow.com
