@@ -53,13 +53,14 @@ const selectTile = (e) => {
     }    
 } 
 
+
 const selcetCircle = (e) => {
-const selectTile = parseInt(e.target.id)
-const bottomTile = parseInt(e.target.id) + 7
-    if (selectTile >= 35 || gameBoard[bottomTile].classList.length > 1) {
-        placeCircle(e)
+    const selectTile = parseInt(e.target.id)
+    const bottomTile = parseInt(e.target.id) + 7
+        if (selectTile >= 35 || gameBoard[bottomTile].classList.length > 1) {
+            placeCircle(e)
+        }
     }
-}
 
 // Function for Game Logic
 function gamestart() {
@@ -99,6 +100,7 @@ function updateTitle(player) {
 return false
 }
 gamestart()
+
 
 // Game Reset Function 
 const replayButton = () => {
