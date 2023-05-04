@@ -2,13 +2,13 @@
 
  *Find Four*
 
- ## Brief Description of Game 
+ ## Description of Game 
 
- Find Four is another way of saying connect four. That being said the goal is to get four of your moves in a line. This can be achieved by getting four vertically, horizontally, or Diagionally. This is a two player game and you alternate turns until someone reaches four in a row. 
+In Find Four, players are not limited to starting only from the bottom row. They can place their pieces anywhere on the board, which means that they can create new connections and block their opponent's moves more easily. This variant of Connect Four requires players to consider not only their own moves but also their opponent's possible responses, which makes the game more challenging and strategic.
 
  ## How to Get Started
 
- Player one begins the game by clicking on the desired slot. Once Player One has finished, Player Two will be allowed to select a circle. In order to help keep track of who is next there is a prompt under the title that will display who is next.  
+To start playing, Player One clicks on the slot they want to place their piece in. Once Player One is done, it's Player Two's turn to select a circle. The prompt under the game title indicates whose turn it is to play. This turn-based gameplay ensures that both players have an equal opportunity to strategize and compete for the win.
 
 ## Credits
 

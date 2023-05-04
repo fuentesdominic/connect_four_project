@@ -78,7 +78,7 @@
 @media screen and (max-width: 400px) {
     .frontPage {
         margin-top: 8rem;
-      height: auto;
+        height: auto;
     }
 
     .index-title {
@@ -94,9 +94,9 @@
     .index-p {
         padding: 1rem;
         margin: 1rem;
-      width: 90%;
-      height: auto;
-      font-size: 10px;
+        width: 90%;
+        height: auto;
+        font-size: 10px;
     }
     
     .index-h3 {
